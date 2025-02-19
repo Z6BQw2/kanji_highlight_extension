@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Surligneur de Vocabulaire",
+    "version": "1.0",
+    "description": "Surligne les mots déjà sélectionnés pour vous aider à les mémoriser.",
+    "permissions": ["contextMenus", "storage", "scripting", "activeTab"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_title": "Vocabulaire"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "css": ["styles.css"],
+        "run_at": "document_end"
+      }
+    ]
+  }
+  
